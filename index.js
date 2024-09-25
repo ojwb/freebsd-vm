@@ -179,6 +179,8 @@ async function main() {
       }
     }
   } catch (err) {
+    core.endGroup();
+    core.startGroup("Show Debug Info");
     error = err;
     try {
       await shell("bash run.sh showDebugInfo");
